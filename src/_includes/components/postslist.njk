@@ -1,13 +1,15 @@
-<ul>
+<section class="grid grid-flow-row grid-cols-3 gap-6">
   {% for post in postslist %}
-    <li>
-      <strong>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </strong>
-      -
-      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      -
-      <span>{{ post.data.description }}</span>
-    </li>
+    <a href="{{ post.url | url }}" class="bg-white rounded-lg transform hover:scale-105 transition-transform shadow-md">
+      <img class="w-full lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded-lg rounded-b-none object-cover object-center mb-6" src="https://asset.kompas.com/crops/Pk_pN6vllxXy1RshYsEv74Q1BYA=/56x0:1553x998/750x500/data/photo/2021/06/16/60c8f9d68ff4a.jpg" alt="Image Size 720x400">
+      <div class="px-6 pb-6">
+        <h3 class="flex flex-row justify-between tracking-widest text-indigo-500 text-xs font-medium title-font mb-2">
+          <span>{{ post.data.category }}</span>
+          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        </h3>
+        <span class="text-lg font-bold text-gray-900 title-font mb-4">{{ post.data.title }}</span>
+        <p class="leading-relaxed text-base">{{ post.data.description }}</p>
+      </div>
+    </a>
   {% endfor %}
-</ul>
+</section>

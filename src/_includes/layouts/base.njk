@@ -4,12 +4,15 @@
     <title>{{ title }}</title>
      <link rel="stylesheet" type="text/css" href="/assets/main.css" />
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     {% include "../components/navigation.njk" %}
-    <main class="p-12">
-      <h1 class="text-3xl mb-8">{{title}}</h1>
-      {{ content | safe }}
+    <main class="bg-gray-100 flex-1">
+      <h1 class="text-5xl px-6 py-5 subpixel-antialiased font-bold bg-white border-b border-black border-solid">{{title}}</h1>
+      <div class="px-6 py-5">
+        {{ content | safe }}
+      </div>
     </main>
-    <script src="/assets/main.js"></script>
+    <footer class="sticky bottom-0 flex items-center justify-between flex-wrap px-8 py-5 footer-gradient">Yo</footer>
+    <script src="/assets/main.js" defer></script>
   </body>
 </html>

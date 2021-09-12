@@ -1,0 +1,11 @@
+---
+title: Pens
+layout: layouts/base.njk
+permalink: /pens/
+eleventyNavigation:
+  key: Pens
+  order: 1
+---
+
+{% set postslist = collections.pens %}
+{% include "components/postslist.njk" %}

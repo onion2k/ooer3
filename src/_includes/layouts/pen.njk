@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="container post">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+</article>
+
+<article class="container">
+  <div style="grid-column: span 2;">
+    <p class="codepen" data-height="800" data-theme-id="dark" data-default-tab="html,result" data-user="onion2k" data-slug-hash="{{ slug }}" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="{{ title }}">
+      <span>See the Pen <a href="https://codepen.io/onion2k/pen/{{ slug }}">
+      {{ title }}</a> by Chris Neale (<a href="https://codepen.io/onion2k">@onion2k</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </div>
+</article>

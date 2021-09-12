@@ -1,0 +1,11 @@
+---
+title: Experiments
+layout: layouts/base.njk
+permalink: /experiments/
+eleventyNavigation:
+  key: Experiments
+  order: 1
+---
+
+{% set postslist = collections.experiments %}
+{% include "components/postslist.njk" %}
