@@ -1,7 +1,21 @@
 <section class="grid grid-flow-row grid-cols-3 gap-6">
   {% for post in postslist %}
-    <a href="{{ post.url | url }}" class="bg-white rounded-lg transform hover:scale-105 transition-transform shadow-md">
-      <img class="w-full lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded-lg rounded-b-none object-cover object-center mb-6" src="https://asset.kompas.com/crops/Pk_pN6vllxXy1RshYsEv74Q1BYA=/56x0:1553x998/750x500/data/photo/2021/06/16/60c8f9d68ff4a.jpg" alt="Image Size 720x400">
+    <a href="{{ post.data.url if post.data.url else post.url | url }}" class="bg-white rounded-lg transform hover:scale-105 transition-transform shadow-md">
+
+      {% if post.data.header %}
+      <picture>
+        <source srcset="{{ post.data.header | replace('.jpg', '.webp') }}">
+        <img src="{{ post.data.header }}" alt="{{ post.data.title }}" class="w-full lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded-lg rounded-b-none object-cover object-center mb-6">
+      </picture>
+      {% elif post.data.gradient %}
+        <div class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded-lg rounded-b-none object-cover object-center mb-6" style="background-image: {{ post.data.gradient }}"></div>
+      {% else %}
+        <div
+          class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded-lg rounded-b-none object-cover object-center mb-6"
+          style="background-image: {% rndGrad %}">
+        </div>
+      {% endif %}
+
       <div class="px-6 pb-6">
         <h3 class="flex flex-row justify-between tracking-widest text-indigo-500 text-xs font-medium title-font mb-2">
           <span>{{ post.data.category }}</span>

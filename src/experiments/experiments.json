@@ -1,4 +1,4 @@
 {
     "tags": "experiments",
-    "layout": "/layouts/post.njk"
+    "layout": "post.njk"
 }

@@ -1,4 +1,4 @@
 {
     "tags": "pens",
-    "layout": "/layouts/pen.njk"
+    "layout": "pen.njk"
 }
